@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Black">#2E2E2E</color>
+    <color name="DarkGrey">#767676</color>
+    <color name="LightGrey">#F8F8F8</color>
+    <color name="MediumGrey">#BEBEBE</color>
+    <color name="White">#FDFDFD</color>
+    <color name="MainOrangeStart">#FF533F</color>
+    <color name="MainOrangeEnd">#FF9340</color>
+    <color name="OrangeSolid">#FF4B40</color>
+    <color name="LightOrange">#FFD7C3</color>
+    <color name="Glass1">#0000008F</color>
+    <color name="Glass2">#00000066</color>
+    <color name="TableBluew">#0A84FF</color>
+    <color name="TableRed">#FF3636</color>
+    <color name="TableGreen">#48DF57</color>
+    <color name="TableYellow">#FFD30F</color>
+    <color name="LightOrangeSolid">#FFB784</color>
+</resources>
