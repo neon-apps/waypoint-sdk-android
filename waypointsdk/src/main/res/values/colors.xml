@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="Black">#2E2E2E</color>
-    <color name="DarkGrey">#767676</color>
-    <color name="LightGrey">#F8F8F8</color>
-    <color name="MediumGrey">#BEBEBE</color>
-    <color name="White">#FDFDFD</color>
-    <color name="MainOrangeStart">#FF533F</color>
-    <color name="MainOrangeEnd">#FF9340</color>
-    <color name="OrangeSolid">#FF4B40</color>
-    <color name="LightOrange">#FFD7C3</color>
-    <color name="Glass1">#0000008F</color>
-    <color name="Glass2">#00000066</color>
+    <public name="Black" type="color">#2E2E2E</public>
+    <public name="DarkGrey" type="color">#767676</public>
+    <public name="LightGrey" type="color">#F8F8F8</public>
+    <public name="MediumGrey" type="color">#BEBEBE</public>
+    <public name="White" type="color">#FDFDFD</public>
+    <public name="MainOrangeStart" type="color">#FF533F</public>
+    <public name="MainOrangeEnd" type="color">#FF9340</public>
+    <public name="OrangeSolid" type="color">#FF4B40</public>
+    <public name="LightOrange" type="color">#FFD7C3</public>
+    <public name="Glass1" type="color">#0000008F</public>
+    <public name="Glass2" type="color">#00000066</public>
     <color name="TableBluew">#0A84FF</color>
     <color name="TableRed">#FF3636</color>
     <color name="TableGreen">#48DF57</color>
