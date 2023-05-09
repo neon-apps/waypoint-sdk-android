@@ -4,9 +4,9 @@ plugins {
 }
 
 android {
+
     namespace 'com.neonapps.waypointsdk'
     compileSdk 32
-
     defaultConfig {
         minSdk 23
         targetSdk 32

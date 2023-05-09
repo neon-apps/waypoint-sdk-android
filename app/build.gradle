@@ -6,7 +6,6 @@ plugins {
 android {
     namespace 'com.neonapps.waypoint_sdk_android'
     compileSdk 32
-
     defaultConfig {
         applicationId "com.neonapps.waypoint_sdk_android"
         minSdk 23
