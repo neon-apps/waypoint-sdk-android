@@ -3,7 +3,7 @@ package com.neonapps.waypointsdk.Models.Order
 import com.neonapps.waypointsdk.Globals
 import com.neonapps.waypointsdk.Models.Table
 
-class Order(
+data class Order(
     var number: Int,
     var customerOrders : ArrayList<CustomerOrder>,
     var table : Table,

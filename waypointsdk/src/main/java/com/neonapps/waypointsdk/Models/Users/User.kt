@@ -2,10 +2,10 @@ package com.neonapps.waypointsdk.Models.Users
 
 
 open class User(
-    var email : String,
-    var name : String,
-    var surname : String,
-    var password: String,
+    open var email : String,
+    open var name : String,
+    open var surname : String,
+    open var password: String,
     var type : UserType = UserType.NONE,
 )
 {

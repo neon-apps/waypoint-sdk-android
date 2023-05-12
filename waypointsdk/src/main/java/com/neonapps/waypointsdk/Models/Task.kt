@@ -4,7 +4,7 @@ import com.neonapps.waypointsdk.Models.Order.Order
 import com.neonapps.waypointsdk.Models.Users.Waiter
 import java.util.Date
 
-class Task(
+data class Task(
     var table: Table?,
     var waiter: Waiter?,
     var content: String?,

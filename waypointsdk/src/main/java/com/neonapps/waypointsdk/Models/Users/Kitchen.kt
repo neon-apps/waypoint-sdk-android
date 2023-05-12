@@ -1,10 +1,10 @@
 package com.neonapps.waypointsdk.Models.Users
 
-class Kitchen(
-    email: String,
-    name: String,
-    surname: String,
-    password: String,
+data class Kitchen(
+    override var email: String,
+    override var name: String,
+    override var surname: String,
+    override var password: String,
 ) : User(email, name, surname,password ) {
     init {
         type = UserType.KITCHEN

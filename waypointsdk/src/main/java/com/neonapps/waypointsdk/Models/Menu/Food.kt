@@ -3,7 +3,7 @@ package com.neonapps.waypointsdk.Models.Menu
 import com.neonapps.waypointsdk.Globals
 
 
-class Food(
+data class Food(
     var title: String,
     var ingredients: String,
     var imageURL: String?,

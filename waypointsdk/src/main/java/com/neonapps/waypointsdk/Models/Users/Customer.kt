@@ -5,11 +5,11 @@ import com.neonapps.waypointsdk.Models.Menu.Food
 import com.neonapps.waypointsdk.Models.Reservation
 import com.neonapps.waypointsdk.Models.Restaurant
 
-class Customer(
-    email: String,
-    name: String,
-    surname: String,
-    password: String,
+data class Customer(
+    override var email: String,
+    override var name: String,
+    override var surname: String,
+    override var password: String,
     var profileImageURL : String,
     var favoriteFoods :List<Food>,
     var favoriteRestaurants : List<Restaurant>,

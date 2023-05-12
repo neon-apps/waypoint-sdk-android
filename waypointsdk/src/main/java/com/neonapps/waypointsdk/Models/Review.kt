@@ -1,6 +1,6 @@
 package com.neonapps.waypointsdk.Models
 
-class Review(
+data class Review(
     var rate : Int,
     var comment : String
 ) {

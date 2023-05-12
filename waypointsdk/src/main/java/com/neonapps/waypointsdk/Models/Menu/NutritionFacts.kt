@@ -1,6 +1,6 @@
 package com.neonapps.waypointsdk.Models.Menu
 
- class NutritionFacts(
+data class NutritionFacts(
     var protein : Double,
     var fat : Double,
     var carbonhydrats : Double,

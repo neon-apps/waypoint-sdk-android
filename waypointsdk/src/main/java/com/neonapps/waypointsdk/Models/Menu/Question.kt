@@ -1,6 +1,6 @@
 package com.neonapps.waypointsdk.Models.Menu
 
- class Question(
+data class Question(
     // Properties that will come from restaurant panel
     var title : String,
     var options : List<String>,

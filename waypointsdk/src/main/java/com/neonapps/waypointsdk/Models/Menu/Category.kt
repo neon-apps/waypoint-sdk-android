@@ -2,7 +2,7 @@ package com.neonapps.waypointsdk.Models.Menu
 
 
 
- class Category(
+data class Category(
     var title: String,
     var description: String,
     var image: Int,

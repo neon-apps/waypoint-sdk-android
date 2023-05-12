@@ -2,7 +2,7 @@ package com.neonapps.waypointsdk.Models
 
 import kotlin.random.Random
 
-class Restaurant(
+data class Restaurant(
     var logoURL : String,
     var photos : List<String>,
     var name : String,

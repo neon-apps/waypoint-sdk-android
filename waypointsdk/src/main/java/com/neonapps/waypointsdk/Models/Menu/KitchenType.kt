@@ -1,7 +1,7 @@
 package com.neonapps.waypointsdk.Models.Menu
 
 
-class KitchenType(
+data class KitchenType(
     var title: String
 
 )

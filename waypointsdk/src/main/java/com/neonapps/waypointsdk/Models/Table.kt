@@ -5,7 +5,7 @@ import com.neonapps.waypointsdk.Models.Order.Order
 import com.neonapps.waypointsdk.Models.Users.Waiter
 import java.lang.reflect.Array.get
 
-class Table(
+data class Table(
     var number: Int,
     var capacity: Int,
     var status: TableStatus = TableStatus.AVAILABLE,

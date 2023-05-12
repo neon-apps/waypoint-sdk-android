@@ -3,7 +3,7 @@ package com.neonapps.waypointsdk.Models
 import com.neonapps.waypointsdk.Globals
 import java.util.Date
 
-class Reservation(
+data class Reservation(
     var number : Int,
     var date : Date,
     var numberOfSeats : Int,

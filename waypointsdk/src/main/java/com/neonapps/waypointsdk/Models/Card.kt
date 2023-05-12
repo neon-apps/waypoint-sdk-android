@@ -1,6 +1,6 @@
 package com.neonapps.waypointsdk.Models
 
-class Card(
+data class Card(
     var number : String,
     var name : String,
     var surname : String,
