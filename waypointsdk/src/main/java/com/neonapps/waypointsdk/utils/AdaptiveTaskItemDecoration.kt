@@ -1,11 +1,13 @@
 package com.neonapps.waypointsdk.utils
 
+import android.content.Context
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.neonapps.waypointsdk.R
 
-class AdaptiveTaskItemDecoration: RecyclerView.ItemDecoration() {
-    private val itemSpacing: Int = 50
+class AdaptiveTaskItemDecoration(private val context: Context): RecyclerView.ItemDecoration() {
+    private val itemSpacing: Int = context.resources.getInteger(R.integer.adaptiveItemSpacing)
 
     override fun getItemOffsets(
         outRect: Rect,

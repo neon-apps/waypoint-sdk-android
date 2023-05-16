@@ -13,7 +13,9 @@ import com.neonapps.waypointsdk.R
 class SwipeToDeleteCallback(
     private val context: Context,
     private val onItemSwipedLeft: (position: Int) -> Unit,
-    private val onItemSwipedRight: (position: Int) -> Unit
+    private val onItemSwipedRight: (position: Int) -> Unit,
+    private val onItemSwipeLeftEnd: (position: Int) -> Unit,
+    private val onItemSwipeRightEnd: (position: Int) -> Unit
 ) : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
 
     private val deleteText = context.getString(R.string.done)
@@ -67,7 +69,7 @@ class SwipeToDeleteCallback(
         isCurrentlyActive: Boolean
     ) {
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
-
+        val position = viewHolder.adapterPosition
         val itemView = viewHolder.itemView
         val isCanceled = dX == 0f && !isCurrentlyActive
 
@@ -98,6 +100,7 @@ class SwipeToDeleteCallback(
                 paint.color = ContextCompat.getColor(context, R.color.TableRed)
                 c.drawRect(backgroundRect, paint)
                 drawTextWithIconOnBackground(c, backgroundRect, takeItBackText, deleteTextPaint, deleteIcon!!)
+                onItemSwipeLeftEnd(position)
             }
             dX > 0 && dX < itemView.width  -> { // Swiping to the right (archive)
                 backgroundRect = RectF(
@@ -121,6 +124,8 @@ class SwipeToDeleteCallback(
                 paint.color = ContextCompat.getColor(context, R.color.TableRed)
                 c.drawRect(backgroundRect, paint)
                 drawTextWithIconOnBackground(c, backgroundRect, takeItBackText, deleteTextPaint, deleteIcon!!)
+                onItemSwipeRightEnd(position)
+
 
 
             }
@@ -149,7 +154,7 @@ class SwipeToDeleteCallback(
 
         val iconLeft = textX - 70f
         val iconTop = textY - 40f
-        val iconRight = textX-15f
+        val iconRight = textX - 15f
         val iconBottom = iconTop + 50f
 
         // Draw icon
