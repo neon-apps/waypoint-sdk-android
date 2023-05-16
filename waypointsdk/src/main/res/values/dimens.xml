@@ -8,5 +8,8 @@
     <dimen name="body2Size">16sp</dimen>
     <dimen name="body3Size">14sp</dimen>
 
+    <dimen name="backgroundRadius">10dp</dimen>
+    <item name="adaptiveItemSpacing" type="integer">50</item>
+
 
 </resources>
