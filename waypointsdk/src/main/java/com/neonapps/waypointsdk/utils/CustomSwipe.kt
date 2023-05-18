@@ -11,29 +11,31 @@ import com.neonapps.waypointsdk.R
 
 class CustomSwipe(
     context: Context,
-    private val rightSwap: Boolean,
-    private val leftSwapText : String,
-    private val leftSwapTextColor : Int? = ContextCompat.getColor(context, R.color.White),
-    private val leftSwapBackgrounColor : Int? =ContextCompat.getColor(context, R.color.TableRed),
-    private val rightSwapText : String,
-    private val rightSwapTextColor: Int = ContextCompat.getColor(context, R.color.White),
-    private val rightSwapBackgroundColor : Int? = ContextCompat.getColor(context, R.color.TableBluew),
+    private val swipeDirections: Int,
+    private val leftSwapText: String?,
+    private val leftSwapTextColor: Int?,
+    private val leftSwapBackgrounColor: Int?,
+    private val rightSwapText: String?,
+    private val rightSwapTextColor: Int?,
+    private val rightSwapBackgroundColor: Int?,
     private val onItemSwipeLeftEnd: (position: Int) -> Unit,
-    private val onItemSwipeRightEnd: (position: Int) -> Unit,
-) : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+    private val onItemSwipeRightEnd: ((position: Int) -> Unit?)?,
+) : ItemTouchHelper.SimpleCallback(0, swipeDirections) {
 
+    private val leftBackground = ContextCompat.getColor(context, R.color.TableRed)
+    private val rightBackground = ContextCompat.getColor(context, R.color.TableBluew)
 
     private val leftSwapTextSize = 48f
     private val rightSwapTextSize = 48f
     private val paint = Paint()
     private val leftSwapTextPaint = Paint().apply {
-        color = leftSwapTextColor!!
+        color = leftSwapTextColor ?: ContextCompat.getColor(context, R.color.White)
         textSize = leftSwapTextSize
         isAntiAlias = true
     }
 
     private val rightSwapTextPaint = Paint().apply {
-        color = rightSwapTextColor
+        color = rightSwapTextColor ?: ContextCompat.getColor(context, R.color.White)
         textSize = rightSwapTextSize
         isAntiAlias = true
     }
@@ -51,8 +53,8 @@ class CustomSwipe(
         val position = viewHolder.adapterPosition
         if (direction == ItemTouchHelper.LEFT) {
             onItemSwipeLeftEnd(position)
-        } else if (direction == ItemTouchHelper.RIGHT && rightSwap) {
-            onItemSwipeRightEnd(position)
+        } else if (direction == ItemTouchHelper.RIGHT) {
+            onItemSwipeRightEnd?.let { it(position) }
         }
 
     }
@@ -64,8 +66,9 @@ class CustomSwipe(
         dX: Float,
         dY: Float,
         actionState: Int,
-        isCurrentlyActive: Boolean
-    ) {
+        isCurrentlyActive: Boolean,
+
+        ) {
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
         val itemView = viewHolder.itemView
         val isCanceled = dX == 0f && !isCurrentlyActive
@@ -82,24 +85,37 @@ class CustomSwipe(
                     itemView.right.toFloat(),
                     itemView.bottom.toFloat()
                 )
-                paint.color = leftSwapBackgrounColor!!
+                if (leftSwapBackgrounColor != null) {
+                    paint.color = leftSwapBackgrounColor
+                } else {
+                    paint.color = leftBackground
+                }
                 c.drawRect(backgroundRect, paint)
 
-                drawTextOnBackground(c, backgroundRect, leftSwapText, leftSwapTextPaint)
+                drawTextOnBackground(c, backgroundRect, leftSwapText ?: "Delete", leftSwapTextPaint)
             }
 
             dX > 0 -> {
-               if(rightSwap){
-                   backgroundRect = RectF(
-                       itemView.left.toFloat(),
-                       itemView.top.toFloat(),
-                       itemView.left + dX,
-                       itemView.bottom.toFloat()
-                   )
-                   paint.color = rightSwapBackgroundColor!!
-                   c.drawRect(backgroundRect, paint)
-                   drawTextOnBackground(c, backgroundRect, rightSwapText, rightSwapTextPaint)
-               }
+
+                backgroundRect = RectF(
+                    itemView.left.toFloat(),
+                    itemView.top.toFloat(),
+                    itemView.left + dX,
+                    itemView.bottom.toFloat()
+                )
+                if (rightSwapBackgroundColor != null) {
+                    paint.color = rightSwapBackgroundColor
+                } else {
+                    paint.color = rightBackground
+                }
+                c.drawRect(backgroundRect, paint)
+                drawTextOnBackground(
+                    c,
+                    backgroundRect,
+                    rightSwapText ?: "Cancel",
+                    rightSwapTextPaint
+                )
+
 
             }
 

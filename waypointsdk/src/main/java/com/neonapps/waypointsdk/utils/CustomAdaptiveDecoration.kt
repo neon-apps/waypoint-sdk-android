@@ -3,12 +3,13 @@ package com.neonapps.waypointsdk.utils
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.Adapter
 
 class CustomAdaptiveDecoration(
     private val spanCount: Int = 1,
     private val spacingHorizontal: Int,
     private val spacingVertical: Int,
-    private val itemCount: Int,
+    private val adapter: Adapter<RecyclerView.ViewHolder>,
 ) :
     RecyclerView.ItemDecoration() {
 
@@ -21,6 +22,7 @@ class CustomAdaptiveDecoration(
         super.getItemOffsets(outRect, view, parent, state)
         val position = parent.getChildAdapterPosition(view)
         val column = position % spanCount
+        val itemCount = adapter.itemCount
         if (spanCount == 1) {
             outRect.top = spacingVertical
             if (position == itemCount - 1) {
