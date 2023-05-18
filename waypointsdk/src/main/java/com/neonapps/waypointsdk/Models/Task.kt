@@ -6,7 +6,6 @@ import java.util.Date
 
 data class Task(
     var table: Table?,
-    var waiter: Waiter?,
     var content: String?,
     var date: Date?,
     var status: TaskStatus?,

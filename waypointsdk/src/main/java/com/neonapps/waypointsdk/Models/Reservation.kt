@@ -8,7 +8,6 @@ data class Reservation(
     var date : Date,
     var numberOfSeats : Int,
     var specialDay : String,
-    var assignedTable : Table?,
     var isCancelled : Boolean = false
 ) {
 

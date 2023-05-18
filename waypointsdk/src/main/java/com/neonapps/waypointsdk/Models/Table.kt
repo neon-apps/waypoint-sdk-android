@@ -10,7 +10,8 @@ data class Table(
     var capacity: Int,
     var status: TableStatus = TableStatus.AVAILABLE,
     var section : String,
-    var waiter: Waiter?
+    var waiter: Waiter?,
+    var activeReservation : Reservation?
 ) {
     var activeOrder: Order?
         get() = Globals.arrOrders.firstOrNull { it.table == this && it.isActive == true }
