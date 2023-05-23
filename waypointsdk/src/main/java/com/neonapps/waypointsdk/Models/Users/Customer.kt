@@ -11,12 +11,12 @@ data class Customer(
     override var surname: String,
     override var password: String,
     var profileImageURL : String,
-    var favoriteFoods :List<Food>,
-    var favoriteRestaurants : List<Restaurant>,
-    var reservations :List<Reservation>,
-    var participatedEvents :List<Event>,
-    var friends : List<Customer>,
-    var isFriend : Boolean,
+    var favoriteFoods :List<Food?>?,
+    var favoriteRestaurants : List<Restaurant?>?,
+    var reservations :List<Reservation?>?,
+    var participatedEvents :List<Event?>?,
+    var friends : List<Customer?>?,
+    var isFriend : Boolean?,
 
     ) : User(email, name, surname, password, ) {
 
