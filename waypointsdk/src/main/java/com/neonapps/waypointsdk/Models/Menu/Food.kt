@@ -1,6 +1,7 @@
 package com.neonapps.waypointsdk.Models.Menu
 
 import com.neonapps.waypointsdk.Globals
+import com.neonapps.waypointsdk.Models.Menu.Question.Question
 
 
 data class Food(

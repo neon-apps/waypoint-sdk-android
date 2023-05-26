@@ -1,7 +1,7 @@
 package com.neonapps.waypointsdk.Models.Order
 
 import com.neonapps.waypointsdk.Models.Menu.Food
-import com.neonapps.waypointsdk.Models.Menu.Question
+import com.neonapps.waypointsdk.Models.Menu.Question.Question
 
 data class OrderItem(
     var food: Food,
