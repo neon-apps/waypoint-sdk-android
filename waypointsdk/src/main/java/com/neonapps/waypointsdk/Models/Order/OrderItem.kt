@@ -8,6 +8,7 @@ data class OrderItem(
     var count: Int,
     var answeredQuestions: List<Question>,
     var customerNote: String,
+    var isSelected : Boolean? = false,
 ) {
     var price : Double = food.price*count.toDouble()
 
