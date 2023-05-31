@@ -17,6 +17,7 @@ data class Customer(
     var participatedEvents :List<Event?>?,
     var friends : List<Customer?>?,
     var isFriend : Boolean?,
+    var isSelected:Boolean? = false
 
 
     ) : User(email, name, surname, password, ) {
