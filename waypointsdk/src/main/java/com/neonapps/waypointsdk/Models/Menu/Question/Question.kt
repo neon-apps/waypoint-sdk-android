@@ -5,7 +5,6 @@ data class Question(
     var title : String,
     var options : List<Option>,
     var isMultipleSelectionEnabled : Boolean,
-    val selectedOptions : List<Option>
     // Properties that may be added during order
 ){
 

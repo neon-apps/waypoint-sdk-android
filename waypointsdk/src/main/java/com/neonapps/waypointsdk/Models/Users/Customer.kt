@@ -18,6 +18,7 @@ data class Customer(
     var friends : List<Customer?>?,
     var isFriend : Boolean?,
 
+
     ) : User(email, name, surname, password, ) {
 
 
